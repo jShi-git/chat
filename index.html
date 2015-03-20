@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+	<title>湖南卫视</title>
+	
+	<link rel="stylesheet" media="all" href="css/style.css?v=2" />
+	<style>
+		#banner{position: relative;}
+	</style>
+</head>
+<body>
+		<span id="count">当前有10人在线</span>
+
+	<section class="banner" id="banner">
+		<img src="images/img_top.png" height="300" width="640" alt="">
+	</section>
+
+	<section class="chat_block" id="chatBlock"></section>
+
+	<section class="input_bar">
+		<div class="input_user"><span><img src="images/avatar.jpg" alt=""></span></div>
+		<div class="input"><input type="text" id="input-content" maxlength="50"><span id="bq-trigger"></span></div>
+		<a class="ico_share" id="send-trigger"></a>
+	</section>
+
+
+    <div id="restrict_heng"><p><span>请在竖屏下使用！</span></p></div>
+
+	<div class="hidden">
+		<audio src="images/jian1.mp3" preload="auto" id="my-sound"></audio>
+	</div>
+
+	<div id="pop-notification"></div>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/purl.js"></script>
+	<script>
+		var ajaxServerUrl="http://app15.s.weshaketv.com:9008/barrage/";
+		var openid = "";
+		var icon = "";
+
+		$(document).ready(function(){
+			var ulrObj = $.url();
+			openid = ulrObj.param("openid");
+			icon = ulrObj.param("icon");
+			$(".input_user img").attr("src",icon);
+		});
+	</script>
+
+	<script src="js/barrage_plus_addclass.js"></script>
+	<script src="js/main.js"></script>
+    <script src="js/barrage_ajax.js"></script>
+</body>
+</html>
